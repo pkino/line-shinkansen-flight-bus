@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     # Claude API Configuration
     anthropic_api_key: str = Field(..., description="Anthropic API key")
     claude_model: str = Field(
-        default="claude-3-5-sonnet-20241022",
+        default="claude-sonnet-4-5-20250929",
         description="Claude model to use",
     )
 

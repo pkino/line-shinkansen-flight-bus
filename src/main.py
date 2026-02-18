@@ -160,14 +160,14 @@ async def detailed_health_check():
         try:
             # Test Claude API with a minimal request
             response = claude_client.messages.create(
-                model="claude-3-5-sonnet-20241022",
+                model="claude-sonnet-4-5-20250929",
                 max_tokens=10,
                 messages=[{"role": "user", "content": "Hi"}]
             )
             claude_status = "healthy"
             claude_details = {
                 "api": "connected",
-                "model": "claude-3-5-sonnet-20241022"
+                "model": "claude-sonnet-4-5-20250929"
             }
         except anthropic.APIError as e:
             claude_status = "unhealthy"
@@ -241,7 +241,7 @@ def handle_text_message(event):
     try:
         # Call Claude API
         response = claude_client.messages.create(
-            model="claude-3-5-sonnet-20241022",
+            model="claude-sonnet-4-5-20250929",
             max_tokens=1024,
             messages=[
                 {
